@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" width="720" height="180" font-family="Arial, sans-serif">
+  <rect width="720" height="180" fill="#ffffff"/>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5d6573"/></marker></defs>
+  <g text-anchor="middle" font-size="14">
+    <rect x="20" y="50" width="150" height="70" rx="6" fill="#eef1f6" stroke="#1f2a44" stroke-width="2"/>
+    <text x="95" y="82" font-weight="bold" fill="#1f2a44">1. User signs</text><text x="95" y="102" fill="#5d6573">transaction</text>
+    <rect x="200" y="50" width="150" height="70" rx="6" fill="#eef1f6" stroke="#1f2a44" stroke-width="2"/>
+    <text x="275" y="82" font-weight="bold" fill="#1f2a44">2. Contract</text><text x="275" y="102" fill="#5d6573">checks conditions</text>
+    <rect x="380" y="50" width="150" height="70" rx="6" fill="#eef1f6" stroke="#1f2a44" stroke-width="2"/>
+    <text x="455" y="82" font-weight="bold" fill="#1f2a44">3. Network</text><text x="455" y="102" fill="#5d6573">validates result</text>
+    <rect x="560" y="50" width="150" height="70" rx="6" fill="#e3f2f1" stroke="#1b7f79" stroke-width="3"/>
+    <text x="635" y="82" font-weight="bold" fill="#1b7f79">4. Recorded</text><text x="635" y="102" fill="#5d6573">publicly, permanently</text>
+  </g>
+  <g stroke="#5d6573" stroke-width="2"><line x1="172" y1="85" x2="196" y2="85" marker-end="url(#m)"/><line x1="352" y1="85" x2="376" y2="85" marker-end="url(#m)"/><line x1="532" y1="85" x2="556" y2="85" marker-end="url(#m)"/></g>
+  <text x="360" y="160" font-size="13" fill="#5d6573" text-anchor="middle">Once deployed, contract code usually cannot be edited, so bugs are hard to fix.</text>
+</svg>

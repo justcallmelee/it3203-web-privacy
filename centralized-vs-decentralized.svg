@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" font-family="Arial, sans-serif">
+  <rect width="720" height="300" fill="#ffffff"/>
+  <g text-anchor="middle">
+    <text x="180" y="30" font-size="18" font-weight="bold" fill="#1f2a44">Centralized (Web 2.0)</text>
+    <text x="540" y="30" font-size="18" font-weight="bold" fill="#1b7f79">Decentralized (Web 3.0)</text>
+  </g>
+  <!-- centralized spokes -->
+  <g stroke="#9aa3b2" stroke-width="2">
+    <line x1="180" y1="160" x2="80" y2="80"/><line x1="180" y1="160" x2="280" y2="80"/>
+    <line x1="180" y1="160" x2="60" y2="180"/><line x1="180" y1="160" x2="300" y2="180"/>
+    <line x1="180" y1="160" x2="100" y2="260"/><line x1="180" y1="160" x2="260" y2="260"/>
+  </g>
+  <rect x="135" y="135" width="90" height="50" rx="6" fill="#1f2a44"/>
+  <text x="180" y="165" font-size="14" fill="#fff" text-anchor="middle">Company server</text>
+  <g fill="#eef1f6" stroke="#1f2a44" stroke-width="2">
+    <circle cx="80" cy="80" r="16"/><circle cx="280" cy="80" r="16"/><circle cx="60" cy="180" r="16"/>
+    <circle cx="300" cy="180" r="16"/><circle cx="100" cy="260" r="16"/><circle cx="260" cy="260" r="16"/>
+  </g>
+  <!-- decentralized mesh -->
+  <g stroke="#7fbdb8" stroke-width="2">
+    <line x1="460" y1="90" x2="620" y2="90"/><line x1="460" y1="90" x2="420" y2="180"/><line x1="460" y1="90" x2="540" y2="170"/>
+    <line x1="620" y1="90" x2="660" y2="180"/><line x1="620" y1="90" x2="540" y2="170"/><line x1="420" y1="180" x2="540" y2="170"/>
+    <line x1="660" y1="180" x2="540" y2="170"/><line x1="420" y1="180" x2="480" y2="260"/><line x1="660" y1="180" x2="600" y2="260"/>
+    <line x1="480" y1="260" x2="600" y2="260"/><line x1="540" y1="170" x2="480" y2="260"/><line x1="540" y1="170" x2="600" y2="260"/>
+  </g>
+  <g fill="#e3f2f1" stroke="#1b7f79" stroke-width="2">
+    <circle cx="460" cy="90" r="16"/><circle cx="620" cy="90" r="16"/><circle cx="420" cy="180" r="16"/>
+    <circle cx="660" cy="180" r="16"/><circle cx="540" cy="170" r="16"/><circle cx="480" cy="260" r="16"/><circle cx="600" cy="260" r="16"/>
+  </g>
+  <line x1="360" y1="50" x2="360" y2="285" stroke="#d9dde3" stroke-width="2" stroke-dasharray="6 6"/>
+</svg>

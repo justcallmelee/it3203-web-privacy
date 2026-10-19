@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" width="720" height="220" font-family="Arial, sans-serif">
+  <rect width="720" height="220" fill="#ffffff"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5d6573"/></marker></defs>
+  <g text-anchor="middle">
+    <rect x="20" y="40" width="200" height="140" rx="8" fill="#eef1f6" stroke="#1f2a44" stroke-width="2"/>
+    <text x="120" y="75" font-size="20" font-weight="bold" fill="#1f2a44">Web 1.0</text>
+    <text x="120" y="100" font-size="14" fill="#2b2b2b">"Read"</text>
+    <text x="120" y="130" font-size="13" fill="#5d6573">Static pages</text>
+    <text x="120" y="150" font-size="13" fill="#5d6573">~1990 - 2004</text>
+    <rect x="260" y="40" width="200" height="140" rx="8" fill="#eef1f6" stroke="#1f2a44" stroke-width="2"/>
+    <text x="360" y="75" font-size="20" font-weight="bold" fill="#1f2a44">Web 2.0</text>
+    <text x="360" y="100" font-size="14" fill="#2b2b2b">"Read + Write"</text>
+    <text x="360" y="130" font-size="13" fill="#5d6573">Social platforms</text>
+    <text x="360" y="150" font-size="13" fill="#5d6573">Data held by companies</text>
+    <rect x="500" y="40" width="200" height="140" rx="8" fill="#e3f2f1" stroke="#1b7f79" stroke-width="3"/>
+    <text x="600" y="75" font-size="20" font-weight="bold" fill="#1b7f79">Web 3.0</text>
+    <text x="600" y="100" font-size="14" fill="#2b2b2b">"Read + Write + Own"</text>
+    <text x="600" y="130" font-size="13" fill="#5d6573">Decentralized networks</text>
+    <text x="600" y="150" font-size="13" fill="#5d6573">User-held keys &amp; data</text>
+  </g>
+  <line x1="222" y1="110" x2="256" y2="110" stroke="#5d6573" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="462" y1="110" x2="496" y2="110" stroke="#5d6573" stroke-width="2" marker-end="url(#ar)"/>
+</svg>
