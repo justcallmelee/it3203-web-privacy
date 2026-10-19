@@ -1,0 +1,509 @@
+/* ==========================================================
+   IT 3203 Project - Web 3.0 & Digital Privacy
+   Single site-wide stylesheet (Milestone #1)
+   Theme: dark "futuristic" look to match the Web 3.0 topic.
+   Selector types used: element (body, h1), class (.card),
+   ID (#site-header), descendant (nav a), pseudo-class (a:hover),
+   pseudo-element (.page-banner::after)
+   ========================================================== */
+
+/* ---------- Color variables (change the theme here) ---------- */
+:root {
+  --bg: #050b19;            /* page background */
+  --panel: #0d1a31;         /* card and content background */
+  --panel-light: #13243f;   /* lighter panel for gradients */
+  --header: #060e20;        /* header background */
+  --cyan: #40e6ee;          /* main accent: borders, highlights */
+  --cyan-text: #65eaf2;     /* link color */
+  --cyan-soft: #8df4f7;     /* sub-headings */
+  --violet: #b39aff;        /* link hover accent */
+  --text: #e8f2ff;          /* body text */
+  --muted: #a4b8d2;         /* secondary text */
+  --border: rgba(98, 155, 194, 0.3);
+  --border-accent: rgba(64, 230, 238, 0.25);
+  --glow: 0 0 24px rgba(64, 230, 238, 0.14);
+}
+
+/* ---------- Element selectors: base styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  /* Soft violet and cyan light spots over a dark gradient */
+  background-image:
+    radial-gradient(ellipse at 85% 0%, rgba(90, 59, 170, 0.22), transparent 38%),
+    radial-gradient(ellipse at 0% 40%, rgba(0, 180, 215, 0.12), transparent 45%),
+    linear-gradient(135deg, #050b19, #0a1430 65%, #060c1b);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/* Page title: bright white with a soft cyan glow */
+h1 {
+  margin: 0 0 0.4rem;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 22px rgba(64, 230, 238, 0.35);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  color: #d5faff;
+  border-bottom: 2px solid var(--border-accent);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--cyan-soft);
+}
+
+a {
+  color: var(--cyan-text);
+  transition: color 0.2s ease;
+}
+
+/* Pseudo-class selector: hover effect on all links */
+a:hover {
+  color: var(--violet);
+}
+
+/* Visible outline for keyboard users */
+a:focus-visible {
+  outline: 2px solid #7af7ff;
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- ID selector: site header ---------- */
+#site-header {
+  background-color: var(--header);
+  border-bottom: 1px solid var(--border-accent);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Header uses flexbox to place the site name and menu side by side */
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+}
+
+.site-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.035em;
+  color: #f3faff;
+  text-decoration: none;
+  text-shadow: 0 0 16px rgba(64, 230, 238, 0.38);
+}
+
+.site-name:hover {
+  color: var(--cyan-text);
+}
+
+/* ---------- Main menu (descendant selectors) ---------- */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: #c3d5ee;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+/* Menu links light up and lift slightly on hover */
+nav a:hover {
+  background-color: rgba(64, 230, 238, 0.09);
+  border-color: rgba(64, 230, 238, 0.45);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Highlights the page the visitor is currently on */
+nav a.current {
+  background-color: rgba(64, 230, 238, 0.12);
+  border-color: rgba(64, 230, 238, 0.5);
+  border-bottom: 2px solid var(--cyan);
+  color: #ffffff;
+}
+
+/* ---------- Page banner below the header ---------- */
+.page-banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(110deg, rgba(15, 32, 63, 0.95), rgba(25, 19, 61, 0.83));
+  border-bottom: 1px solid var(--border-accent);
+}
+
+/* Pseudo-element: faint grid lines drawn behind the banner text */
+.page-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(64, 230, 238, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 230, 238, 0.16) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.page-banner .banner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2.7rem;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 65ch;
+  color: #b8cde9;
+  font-size: 1.1rem;
+}
+
+/* ---------- Two-column layout with CSS grid ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Pages without a sidebar use a single column */
+.layout.single {
+  grid-template-columns: 1fr;
+}
+
+/* Shared "glass panel" look for content, cards, and concepts */
+.content,
+.card,
+.concept {
+  background: linear-gradient(145deg, #13243f, #0d1a31);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--glow), 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+.content {
+  padding: 1rem 2.5rem 2.5rem;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar .card {
+  position: sticky;
+  top: 1rem;
+}
+
+.card {
+  border-top: 3px solid var(--cyan);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere; /* keeps long emails/links inside the card */
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+  border-color: rgba(64, 230, 238, 0.65);
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card ul,
+.card ol {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+/* ---------- Content components ---------- */
+.callout {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1rem;
+  background-color: rgba(31, 129, 148, 0.13);
+  border-left: 4px solid var(--cyan);
+  border-radius: 0 10px 10px 0;
+}
+
+.callout.warning {
+  background-color: rgba(188, 113, 25, 0.13);
+  border-left-color: #ffbd69;
+}
+
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figure img {
+  background-color: #ffffff;
+  border: 1px solid rgba(64, 230, 238, 0.35);
+  border-radius: 12px;
+}
+
+figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Table of contents on the home page: a grid of linked boxes */
+.toc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.toc a {
+  display: block;
+  height: 100%;
+  padding: 1rem;
+  background: linear-gradient(145deg, rgba(30, 54, 88, 0.8), rgba(12, 27, 51, 0.9));
+  border: 1px solid rgba(87, 157, 193, 0.36);
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.toc a:hover {
+  background: rgba(25, 65, 88, 0.75);
+  border-color: var(--cyan);
+  color: #ffffff;
+  transform: translateY(-4px);
+}
+
+.toc strong {
+  display: block;
+  color: var(--cyan-soft);
+}
+
+/* Key-terms definition list */
+dl.terms dt {
+  margin-top: 0.75rem;
+  font-weight: bold;
+  color: var(--cyan-soft);
+}
+
+dl.terms dd {
+  margin: 0.1rem 0 0 1.25rem;
+}
+
+/* ---------- Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: bold;
+  color: var(--cyan-soft);
+  padding-bottom: 0.4rem;
+}
+
+th,
+td {
+  border: 1px solid rgba(95, 144, 183, 0.28);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #173457;
+  color: #c6fbff;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(87, 127, 181, 0.09);
+}
+
+tbody tr:hover {
+  background-color: rgba(64, 230, 238, 0.07);
+}
+
+/* ---------- Key concepts page: numbered concept blocks ---------- */
+.concept {
+  padding: 0.25rem 1.25rem 0.75rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.25s;
+}
+
+.concept:hover {
+  border-color: rgba(64, 230, 238, 0.65);
+}
+
+.concept h2 {
+  border-bottom: none;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.concept-number {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #13bdcb, #8566e8);
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+/* ---------- References page ---------- */
+.reference-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+/* ---------- About page: photo + intro side by side (flex) ---------- */
+.profile {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.profile img {
+  width: 160px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid var(--cyan);
+  box-shadow: 0 0 24px rgba(64, 230, 238, 0.22);
+}
+
+/* ---------- Previous / next page links ---------- */
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-accent);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 2rem;
+  background-color: #050d1d;
+  border-top: 1px solid var(--border-accent);
+  color: #9db1cc;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+footer a {
+  color: var(--cyan-soft);
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* ---------- Basic small-screen fallback (full responsive work is Milestone #3) ---------- */
+@media (max-width: 800px) {
+  .header-inner {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Turn off animations for visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  nav a,
+  .card,
+  .toc a,
+  .concept {
+    transition: none;
+  }
+}

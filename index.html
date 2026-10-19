@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+  IT 3203 Class Project - Milestone #1
+  Page: Home (cover page)
+  Purpose: Title, abstract, key terms, and table of contents.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research on how Web 3.0 technologies affect digital privacy, security, and user control.">
+  <title>Home | Web 3.0 &amp; Digital Privacy</title>
+  <!-- One stylesheet is shared by every page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site header and main menu (same on every page) -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Web 3.0 &amp; Digital Privacy</a>
+      <nav aria-label="Main menu">
+        <ul>
+          <li><a class="current" href="index.html">Home</a></li>
+          <li><a href="topic1.html">Decentralization</a></li>
+          <li><a href="topic2.html">Smart Contracts</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page title area -->
+  <div class="page-banner">
+    <div class="banner-inner">
+      <h1>Web 3.0 &amp; Digital Privacy</h1>
+      <p class="subtitle">Decentralization, Security, and User Control</p>
+    </div>
+  </div>
+
+  <!-- Main content (left) and sidebar (right) using CSS grid -->
+  <div class="layout">
+    <main class="content">
+
+      <h2>Abstract</h2>
+      <p>
+        Today most personal data on the web is collected and stored by a few large companies.
+        Web 3.0 is a proposed next stage of the web that uses blockchains, cryptography, and
+        peer-to-peer networks so that users, not platforms, hold their own accounts and data.
+        Supporters say this gives people more privacy and control. This research looks at
+        whether that promise holds up.
+      </p>
+      <p>
+        The project explains how decentralization and data ownership work, then examines the
+        security and privacy risks that come with smart contracts and public ledgers. The goal
+        is a balanced view: Web 3.0 can reduce some privacy problems, but it also creates new ones.
+      </p>
+
+      <figure>
+        <img src="images/web-evolution.svg" alt="Diagram comparing Web 1.0 (read), Web 2.0 (read and write), and Web 3.0 (read, write, and own)" width="720" height="220">
+        <figcaption>Figure 1. The evolution of the web, from static pages to user-owned networks.</figcaption>
+      </figure>
+
+      <div class="callout warning">
+        <strong>Important distinction:</strong> Web 3.0 does not automatically mean better privacy.
+        Most public blockchains are transparent by design, so every transaction can be viewed by anyone.
+      </div>
+
+      <h2>Key Terms</h2>
+      <dl class="terms">
+        <dt>Web 3.0</dt>
+        <dd>A vision of a decentralized web where users control their identity, data, and digital assets.</dd>
+        <dt>Blockchain</dt>
+        <dd>A shared, append-only record of transactions kept by many computers instead of one.</dd>
+        <dt>Decentralization</dt>
+        <dd>Spreading control and data across many independent participants.</dd>
+        <dt>Wallet</dt>
+        <dd>Software that stores a user's private keys and signs transactions.</dd>
+        <dt>Smart contract</dt>
+        <dd>A program stored on a blockchain that runs automatically when its conditions are met.</dd>
+        <dt>Pseudonymity</dt>
+        <dd>Acting under an identifier (such as a wallet address) that is not your real name but can still be traced.</dd>
+      </dl>
+
+      <h2>Table of Contents</h2>
+      <ul class="toc">
+        <li>
+          <a href="topic1.html">
+            <strong>1. Decentralization &amp; Data Ownership</strong>
+            How blockchains move control of data from companies to users.
+          </a>
+        </li>
+        <li>
+          <a href="topic2.html">
+            <strong>2. Smart Contracts, Security &amp; Privacy Risks</strong>
+            The new threats that come with public, permanent code.
+          </a>
+        </li>
+        <li>
+          <a href="key-concepts.html">
+            <strong>3. Key Concepts</strong>
+            Seven essential ideas explained in plain language.
+          </a>
+        </li>
+        <li>
+          <a href="references.html">
+            <strong>4. References &amp; Resources</strong>
+            Sources used in this research and places to learn more.
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <strong>5. About</strong>
+            The author and the goals of this class project.
+          </a>
+        </li>
+      </ul>
+
+    </main>
+
+    <!-- Sidebar: quick facts -->
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Research Questions</h3>
+        <ul>
+          <li>Who controls personal data in Web 3.0?</li>
+          <li>Are public blockchains private?</li>
+          <li>What new security risks appear?</li>
+          <li>Which tools can protect users?</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer with required class project note -->
+  <footer>
+    <div class="footer-inner">
+      <p>This site is a class project for
+        <a href="https://ksuweb.github.io/IT3203/">IT 3203 Intro to Web Development</a>
+        at Kennesaw State University.</p>
+      <p>&copy; 2026 Robbie Jones</p>
+    </div>
+  </footer>
+
+</body>
+</html>

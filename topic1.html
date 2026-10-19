@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+  IT 3203 Class Project - Milestone #1
+  Page: Topic 1 - Decentralization, Blockchain, and Data Ownership
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How decentralization and blockchain technology change who owns and controls personal data.">
+  <title>Decentralization &amp; Data Ownership | Web 3.0 &amp; Digital Privacy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site header and main menu -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Web 3.0 &amp; Digital Privacy</a>
+      <nav aria-label="Main menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="current" href="topic1.html">Decentralization</a></li>
+          <li><a href="topic2.html">Smart Contracts</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="banner-inner">
+      <h1>Decentralization &amp; Data Ownership</h1>
+      <p class="subtitle">Topic 1: How blockchains shift control of data from platforms to people</p>
+    </div>
+  </div>
+
+  <div class="layout">
+    <main class="content">
+
+      <h2 id="problem">The Problem with Centralized Data</h2>
+      <p>
+        In Web 2.0, services such as social networks, email providers, and online stores keep
+        user accounts and personal data on their own servers. This model is convenient, but it
+        gives companies a great deal of power over that information. A user usually cannot see
+        everything that is collected, cannot easily move it to another service, and must trust
+        the company to protect it.
+      </p>
+      <p>Centralized storage creates three main privacy concerns:</p>
+      <ul>
+        <li><strong>Single point of failure:</strong> one breach can expose millions of records at once.</li>
+        <li><strong>Data monetization:</strong> personal information is often used for targeted advertising.</li>
+        <li><strong>Lock-in:</strong> accounts, contacts, and content are tied to one platform.</li>
+      </ul>
+
+      <h2 id="decentralization">What Decentralization Changes</h2>
+      <p>
+        Web 3.0 replaces the single company server with a network of independent computers,
+        called <em>nodes</em>. Each node keeps a copy of the shared record and follows the same
+        rules for adding new data. No one organization can change the rules or the history alone.
+      </p>
+
+      <figure>
+        <img src="images/centralized-vs-decentralized.svg" alt="Left: many users connected to one company server. Right: many nodes connected to each other in a mesh with no central server." width="720" height="300">
+        <figcaption>Figure 2. Centralized versus decentralized network models.</figcaption>
+      </figure>
+
+      <h2 id="blockchain">How a Blockchain Stores Data</h2>
+      <p>
+        A blockchain groups transactions into <em>blocks</em>. Each block contains a cryptographic
+        hash of the block before it, which links the blocks into a chain. If someone tried to change
+        an old block, its hash would change and no longer match the next block, so the network
+        would reject the edit. This is what makes blockchain records very hard to tamper with.
+      </p>
+
+      <figure>
+        <img src="images/blockchain-chain.svg" alt="Three blocks in a row, each storing the hash of the previous block" width="720" height="200">
+        <figcaption>Figure 3. Blocks are linked by hashes, making the history tamper-evident.</figcaption>
+      </figure>
+
+      <p>The basic steps for adding a transaction are:</p>
+      <ol>
+        <li>A user signs a transaction with their private key.</li>
+        <li>The transaction is broadcast to the network.</li>
+        <li>Nodes check that the signature and balance are valid.</li>
+        <li>A new block containing the transaction is agreed on through a consensus process.</li>
+        <li>Every node adds the block to its copy of the chain.</li>
+      </ol>
+
+      <h2 id="ownership">User-Controlled Identity and Data</h2>
+      <p>
+        In Web 3.0, a user logs in with a wallet instead of a username and password stored by a
+        company. The wallet holds a private key that only the user knows. This brings two
+        important privacy benefits: the user does not have to hand over an email address or
+        phone number to sign in, and the same identity can be used across many applications.
+      </p>
+      <p>
+        Newer standards go further. The W3C <em>Decentralized Identifiers</em> (DIDs) and
+        <em>Verifiable Credentials</em> specifications let a person prove a fact about themselves,
+        such as being over 21 or holding a degree, without revealing the full document behind it.
+      </p>
+
+      <table>
+        <caption>Table 1. Comparing data control in Web 2.0 and Web 3.0</caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">Web 2.0 (Centralized)</th>
+            <th scope="col">Web 3.0 (Decentralized)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Where data is stored</td>
+            <td>Company-owned servers</td>
+            <td>Distributed across network nodes</td>
+          </tr>
+          <tr>
+            <td>Login method</td>
+            <td>Username, password, email</td>
+            <td>Cryptographic wallet and keys</td>
+          </tr>
+          <tr>
+            <td>Who controls the account</td>
+            <td>The platform</td>
+            <td>The key holder</td>
+          </tr>
+          <tr>
+            <td>Data portability</td>
+            <td>Limited; depends on the platform</td>
+            <td>Same identity works across apps</td>
+          </tr>
+          <tr>
+            <td>Account recovery</td>
+            <td>"Forgot password" reset</td>
+            <td>Often impossible if keys are lost</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="limits">Limits of Data Ownership</h2>
+      <div class="callout warning">
+        <strong>Ownership is not the same as privacy.</strong> Data written to a public blockchain
+        can be read by anyone and can never be deleted.
+      </div>
+      <p>
+        Because public ledgers are permanent and open, a wallet address that is linked to a
+        real person (for example, through an exchange account or a social media post) can reveal
+        that person's entire transaction history. This also conflicts with privacy laws such as
+        the EU's GDPR, which gives people the "right to erasure." Topic 2 looks more closely at
+        these risks.
+      </p>
+
+      <!-- Previous / next navigation between research pages -->
+      <div class="page-nav">
+        <a href="index.html">&larr; Home</a>
+        <a href="topic2.html">Topic 2: Smart Contracts &rarr;</a>
+      </div>
+
+    </main>
+
+    <!-- Sidebar: in-page links -->
+    <aside class="sidebar">
+      <div class="card">
+        <h3>On This Page</h3>
+        <ul>
+          <li><a href="#problem">Centralized data</a></li>
+          <li><a href="#decentralization">Decentralization</a></li>
+          <li><a href="#blockchain">How a blockchain works</a></li>
+          <li><a href="#ownership">User-controlled identity</a></li>
+          <li><a href="#limits">Limits of ownership</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>This site is a class project for
+        <a href="https://ksuweb.github.io/IT3203/">IT 3203 Intro to Web Development</a>
+        at Kennesaw State University.</p>
+      <p>&copy; 2026 Robbie Jones</p>
+    </div>
+  </footer>
+
+</body>
+</html>

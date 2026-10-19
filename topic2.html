@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+  IT 3203 Class Project - Milestone #1
+  Page: Topic 2 - Smart Contracts, Security, and Privacy Risks
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Security and privacy risks of smart contracts and public blockchains, and the tools that reduce them.">
+  <title>Smart Contracts &amp; Privacy Risks | Web 3.0 &amp; Digital Privacy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site header and main menu -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Web 3.0 &amp; Digital Privacy</a>
+      <nav aria-label="Main menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="topic1.html">Decentralization</a></li>
+          <li><a class="current" href="topic2.html">Smart Contracts</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="banner-inner">
+      <h1>Smart Contracts, Security &amp; Privacy Risks</h1>
+      <p class="subtitle">Topic 2: The new threats that come with public, permanent code</p>
+    </div>
+  </div>
+
+  <div class="layout">
+    <main class="content">
+
+      <h2 id="contracts">What Smart Contracts Do</h2>
+      <p>
+        A smart contract is a program stored on a blockchain such as Ethereum. It holds funds or
+        data and follows fixed rules written in code. When someone sends a transaction that meets
+        those rules, the contract runs automatically, without a bank, lawyer, or company in the
+        middle. Smart contracts power decentralized finance (DeFi), NFT marketplaces, and
+        decentralized applications (dApps).
+      </p>
+
+      <figure>
+        <img src="images/smart-contract-flow.svg" alt="Four steps: user signs a transaction, contract checks conditions, network validates the result, result is recorded publicly" width="720" height="180">
+        <figcaption>Figure 4. How a smart contract transaction is processed.</figcaption>
+      </figure>
+
+      <h2 id="security">Security Risks</h2>
+      <p>
+        Because contract code is public, attackers can study it for mistakes. And because it is
+        usually immutable once deployed, a bug cannot simply be patched the way a normal web
+        application can. Common weaknesses include:
+      </p>
+      <ul>
+        <li><strong>Reentrancy:</strong> a malicious contract calls back into the victim contract before the first call finishes, draining funds.</li>
+        <li><strong>Access-control mistakes:</strong> functions that should be restricted to the owner are left open to anyone.</li>
+        <li><strong>Logic and math errors:</strong> incorrect calculations that can be exploited for profit.</li>
+        <li><strong>Key theft:</strong> if a private key is stolen, the attacker has full control of the account.</li>
+        <li><strong>Phishing and malicious approvals:</strong> users are tricked into signing transactions that give away their tokens.</li>
+      </ul>
+
+      <table>
+        <caption>Table 2. Well-known Web 3.0 security incidents</caption>
+        <thead>
+          <tr>
+            <th scope="col">Incident</th>
+            <th scope="col">Year</th>
+            <th scope="col">Cause</th>
+            <th scope="col">Lesson</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The DAO</td>
+            <td>2016</td>
+            <td>Reentrancy bug in a smart contract</td>
+            <td>Code must be audited before it holds real value</td>
+          </tr>
+          <tr>
+            <td>Ronin Bridge</td>
+            <td>2022</td>
+            <td>Attackers gained control of validator private keys</td>
+            <td>"Decentralized" systems can still depend on a few keys</td>
+          </tr>
+          <tr>
+            <td>Wallet-drainer phishing</td>
+            <td>Ongoing</td>
+            <td>Fake sites ask users to sign harmful approvals</td>
+            <td>Users must understand what they are signing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="privacy">Privacy Risks of Public Ledgers</h2>
+      <p>
+        Most people assume that a wallet address is anonymous. In reality, it is
+        <em>pseudonymous</em>: the address is not your name, but every action it takes is public
+        and permanent. Blockchain analysis companies and researchers can often link addresses to
+        real people by following the flow of funds.
+      </p>
+      <p>Ways a user's identity can be exposed:</p>
+      <ol>
+        <li>Buying cryptocurrency on an exchange that requires ID verification (KYC).</li>
+        <li>Posting a wallet address or ENS name on social media.</li>
+        <li>Reusing the same address across many applications.</li>
+        <li>dApp websites that still use ordinary trackers, cookies, and IP logging.</li>
+      </ol>
+
+      <div class="callout warning">
+        <strong>Permanence matters:</strong> a privacy leak on a normal website can sometimes be
+        removed. A leak recorded on a public blockchain stays there forever.
+      </div>
+
+      <h2 id="solutions">Privacy-Enhancing Solutions</h2>
+      <p>Developers are building tools to bring stronger privacy to Web 3.0:</p>
+      <ul>
+        <li><strong>Zero-knowledge proofs (ZKPs):</strong> prove that something is true (for example, "I have enough funds") without revealing the underlying data.</li>
+        <li><strong>Privacy-focused blockchains:</strong> networks such as Zcash and Monero hide transaction details by default or by choice.</li>
+        <li><strong>Selective disclosure credentials:</strong> share only the specific facts a service needs.</li>
+        <li><strong>Smart contract audits:</strong> independent reviews of code before launch.</li>
+        <li><strong>Hardware wallets:</strong> keep private keys offline and away from malware.</li>
+      </ul>
+
+      <table>
+        <caption>Table 3. Privacy benefits and limitations of Web 3.0</caption>
+        <thead>
+          <tr>
+            <th scope="col">Potential Benefit</th>
+            <th scope="col">Related Limitation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No email or password needed to sign in</td>
+            <td>Wallet activity can be tracked across sites</td>
+          </tr>
+          <tr>
+            <td>No central database to breach</td>
+            <td>All transactions are public by default</td>
+          </tr>
+          <tr>
+            <td>Tamper-resistant records</td>
+            <td>Mistakes and personal data cannot be erased</td>
+          </tr>
+          <tr>
+            <td>User holds their own keys</td>
+            <td>Lost or stolen keys usually cannot be recovered</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="conclusion">Summary</h2>
+      <p>
+        Smart contracts remove the need to trust a middleman, but they ask users to trust code
+        instead. Public blockchains remove central databases, but they make activity visible to
+        everyone. Real privacy in Web 3.0 depends on tools like zero-knowledge proofs, careful
+        security practices, and users who understand the risks.
+      </p>
+
+      <div class="page-nav">
+        <a href="topic1.html">&larr; Topic 1: Decentralization</a>
+        <a href="key-concepts.html">Key Concepts &rarr;</a>
+      </div>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h3>On This Page</h3>
+        <ul>
+          <li><a href="#contracts">What smart contracts do</a></li>
+          <li><a href="#security">Security risks</a></li>
+          <li><a href="#privacy">Privacy risks</a></li>
+          <li><a href="#solutions">Privacy solutions</a></li>
+          <li><a href="#conclusion">Summary</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>This site is a class project for
+        <a href="https://ksuweb.github.io/IT3203/">IT 3203 Intro to Web Development</a>
+        at Kennesaw State University.</p>
+      <p>&copy; 2026 Robbie Jones</p>
+    </div>
+  </footer>
+
+</body>
+</html>
