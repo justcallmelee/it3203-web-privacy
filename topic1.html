@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  IT 3203 Class Project - Milestone #1
+  IT 3203 Class Project - Milestones #1 and #2 (updated for Milestone #2: Quiz added to menu)
   Page: Topic 1 - Decentralization, Blockchain, and Data Ownership
 -->
 <html lang="en">
@@ -23,6 +23,7 @@
           <li><a class="current" href="topic1.html">Decentralization</a></li>
           <li><a href="topic2.html">Smart Contracts</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -140,6 +141,54 @@
         </tbody>
       </table>
 
+      <h2 id="storage">Decentralized Storage: Where the Files Live</h2>
+      <p>
+        Blockchains are good at storing small records, such as transactions, but they are too
+        slow and expensive for photos, documents, or videos. Web 3.0 applications usually keep
+        larger files in a decentralized storage network such as the
+        <em>InterPlanetary File System</em> (IPFS).
+      </p>
+      <p>
+        IPFS uses <strong>content addressing</strong>. Instead of asking for a file by its location
+        (a server and a path), you ask for it by a <em>Content Identifier</em> (CID) that is
+        calculated from the file's own hash. If even one byte of the file changes, the CID changes
+        too, so users can be sure they received exactly the file they asked for.
+      </p>
+
+      <table>
+        <caption>Table 2. Location addressing versus content addressing</caption>
+        <thead>
+          <tr>
+            <th scope="col">Question</th>
+            <th scope="col">Traditional web (location)</th>
+            <th scope="col">IPFS (content)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>How is a file found?</td>
+            <td>By server address and path (URL)</td>
+            <td>By a CID made from the file's hash</td>
+          </tr>
+          <tr>
+            <td>Who can serve it?</td>
+            <td>Only the server that hosts it</td>
+            <td>Any node that has a copy</td>
+          </tr>
+          <tr>
+            <td>Can it be silently changed?</td>
+            <td>Yes, the owner can replace it</td>
+            <td>No, a changed file gets a new CID</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning">
+        <strong>Privacy note:</strong> the IPFS documentation explains that all content on the
+        public IPFS network can be viewed by anyone who has its CID unless the file is encrypted
+        first. Nodes also announce which content they store, which can reveal what a user is sharing.
+      </div>
+
       <h2 id="limits">Limits of Data Ownership</h2>
       <div class="callout warning">
         <strong>Ownership is not the same as privacy.</strong> Data written to a public blockchain
@@ -170,6 +219,7 @@
           <li><a href="#decentralization">Decentralization</a></li>
           <li><a href="#blockchain">How a blockchain works</a></li>
           <li><a href="#ownership">User-controlled identity</a></li>
+          <li><a href="#storage">Decentralized storage</a></li>
           <li><a href="#limits">Limits of ownership</a></li>
         </ul>
       </div>

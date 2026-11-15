@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+  IT 3203 Class Project - Milestone #2
+  Page: Quiz - ten-question self-assessment on Web 3.0 and digital privacy
+  Question types: fill-in-the-blank (text inputs), multiple choice with one
+  answer (radio buttons and a select list), and multi-selection (checkboxes).
+  All quiz behavior (timer, scoring, results, reset) lives in quiz.js.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your knowledge of Web 3.0, blockchain, and digital privacy with a timed ten-question quiz.">
+  <title>Quiz | Web 3.0 &amp; Digital Privacy</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- defer: run the script after the page's HTML has loaded -->
+  <script src="quiz.js" defer></script>
+</head>
+<body>
+
+  <!-- Site header and main menu -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Web 3.0 &amp; Digital Privacy</a>
+      <nav aria-label="Main menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="topic1.html">Decentralization</a></li>
+          <li><a href="topic2.html">Smart Contracts</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a class="current" href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="banner-inner">
+      <h1>Knowledge Quiz</h1>
+      <p class="subtitle">Ten questions to check what you learned about Web 3.0 and digital privacy</p>
+    </div>
+  </div>
+
+  <div class="layout">
+    <main class="content">
+
+      <!-- Instructions shown before the quiz starts -->
+      <section id="quiz-intro" class="quiz-intro">
+        <h2>Before You Begin</h2>
+        <ul>
+          <li>There are <strong>10 questions</strong>, worth <strong>10 points</strong> each.</li>
+          <li>You have <strong>10 minutes</strong>. The quiz submits automatically when time runs out.</li>
+          <li>Questions marked <em>"select all that apply"</em> are only correct if every right choice is checked.</li>
+          <li>You need <strong>70 points or more</strong> to pass.</li>
+        </ul>
+        <button type="button" id="start-btn" class="btn btn-primary">Start Quiz</button>
+      </section>
+
+      <!-- Results panel: filled in by quiz.js after the quiz is submitted -->
+      <div id="results" class="results" aria-live="polite" hidden></div>
+
+      <!-- The quiz form. Questions stay disabled until the Start button is clicked. -->
+      <form id="quiz-form" class="quiz-form not-started" novalidate>
+        <fieldset id="quiz-questions" disabled>
+          <legend class="visually-hidden">Quiz questions</legend>
+
+          <!-- Question 1: fill in the blank -->
+          <fieldset class="question" id="q1">
+            <legend><span class="q-number">1</span>Fill in the blank</legend>
+            <label for="q1-input">
+              A <span class="blank">________</span> is a shared, append-only record of transactions
+              kept by many computers instead of one.
+            </label>
+            <input type="text" id="q1-input" name="q1" autocomplete="off" placeholder="Type your answer">
+          </fieldset>
+
+          <!-- Question 2: fill in the blank -->
+          <fieldset class="question" id="q2">
+            <legend><span class="q-number">2</span>Fill in the blank</legend>
+            <label for="q2-input">
+              IPFS finds a file by a Content Identifier, which is abbreviated as
+              <span class="blank">________</span>.
+            </label>
+            <input type="text" id="q2-input" name="q2" autocomplete="off" placeholder="Type your answer">
+          </fieldset>
+
+          <!-- Question 3: fill in the blank -->
+          <fieldset class="question" id="q3">
+            <legend><span class="q-number">3</span>Fill in the blank</legend>
+            <label for="q3-input">
+              In September 2022, Ethereum switched from proof of work to proof of
+              <span class="blank">________</span>.
+            </label>
+            <input type="text" id="q3-input" name="q3" autocomplete="off" placeholder="Type one word">
+          </fieldset>
+
+          <!-- Question 4: multiple choice (one answer) -->
+          <fieldset class="question" id="q4">
+            <legend><span class="q-number">4</span>Which word best describes a wallet address on a public blockchain?</legend>
+            <div class="options">
+              <label class="option"><input type="radio" name="q4" value="anonymous"> Anonymous: it can never be linked to a person</label>
+              <label class="option"><input type="radio" name="q4" value="pseudonymous"> Pseudonymous: not your name, but it can be traced</label>
+              <label class="option"><input type="radio" name="q4" value="encrypted"> Encrypted: only the owner can see its transactions</label>
+              <label class="option"><input type="radio" name="q4" value="temporary"> Temporary: it is deleted after each transaction</label>
+            </div>
+          </fieldset>
+
+          <!-- Question 5: multiple choice (one answer) -->
+          <fieldset class="question" id="q5">
+            <legend><span class="q-number">5</span>What does a zero-knowledge proof allow a user to do?</legend>
+            <div class="options">
+              <label class="option"><input type="radio" name="q5" value="a"> Delete data that was written to a blockchain</label>
+              <label class="option"><input type="radio" name="q5" value="b"> Prove a statement is true without revealing the data behind it</label>
+              <label class="option"><input type="radio" name="q5" value="c"> Recover a lost private key</label>
+              <label class="option"><input type="radio" name="q5" value="d"> Speed up transactions by skipping validation</label>
+            </div>
+          </fieldset>
+
+          <!-- Question 6: multiple choice (one answer) -->
+          <fieldset class="question" id="q6">
+            <legend><span class="q-number">6</span>What type of bug was exploited in The DAO incident of 2016?</legend>
+            <div class="options">
+              <label class="option"><input type="radio" name="q6" value="phishing"> Phishing</label>
+              <label class="option"><input type="radio" name="q6" value="reentrancy"> Reentrancy</label>
+              <label class="option"><input type="radio" name="q6" value="sql"> SQL injection</label>
+              <label class="option"><input type="radio" name="q6" value="xss"> Cross-site scripting</label>
+            </div>
+          </fieldset>
+
+          <!-- Question 7: multiple choice (one answer) using a drop-down list -->
+          <fieldset class="question" id="q7">
+            <legend><span class="q-number">7</span>Choose the best answer from the list</legend>
+            <label for="q7-select">Why is it hard to fix a bug in a smart contract after it is deployed?</label>
+            <select id="q7-select" name="q7">
+              <option value="">-- Select an answer --</option>
+              <option value="a">Smart contracts are written in a secret language</option>
+              <option value="b">The code is usually immutable once it is on the blockchain</option>
+              <option value="c">Only the bank that hosts the contract can change it</option>
+              <option value="d">Smart contracts cannot contain bugs</option>
+            </select>
+          </fieldset>
+
+          <!-- Question 8: multi-selection (more than one answer) -->
+          <fieldset class="question" id="q8">
+            <legend><span class="q-number">8</span>Which of these are privacy risks of public blockchains? <em>(Select all that apply.)</em></legend>
+            <div class="options">
+              <label class="option"><input type="checkbox" name="q8" value="visible"> Transactions can be viewed by anyone</label>
+              <label class="option"><input type="checkbox" name="q8" value="permanent"> Data written to the chain cannot be deleted</label>
+              <label class="option"><input type="checkbox" name="q8" value="kyc"> An address can be linked to a real identity through an exchange</label>
+              <label class="option"><input type="checkbox" name="q8" value="password"> Users must give every app their email password</label>
+              <label class="option"><input type="checkbox" name="q8" value="central"> One central company database holds all the data</label>
+            </div>
+          </fieldset>
+
+          <!-- Question 9: multi-selection (more than one answer) -->
+          <fieldset class="question" id="q9">
+            <legend><span class="q-number">9</span>Which practices help protect personal data in a Web 3.0 app? <em>(Select all that apply.)</em></legend>
+            <div class="options">
+              <label class="option"><input type="checkbox" name="q9" value="offchain"> Keep personal data off-chain</label>
+              <label class="option"><input type="checkbox" name="q9" value="names"> Store users' full names on a public blockchain</label>
+              <label class="option"><input type="checkbox" name="q9" value="hashes"> Store only hashes or proofs on-chain</label>
+              <label class="option"><input type="checkbox" name="q9" value="encrypt"> Encrypt files before uploading them to IPFS</label>
+              <label class="option"><input type="checkbox" name="q9" value="sharekey"> Share your private key with apps you trust</label>
+            </div>
+          </fieldset>
+
+          <!-- Question 10: multiple choice (one answer) -->
+          <fieldset class="question" id="q10">
+            <legend><span class="q-number">10</span>What usually happens if you lose the private key to your Web 3.0 wallet?</legend>
+            <div class="options">
+              <label class="option"><input type="radio" name="q10" value="a"> You reset it with a "forgot password" email</label>
+              <label class="option"><input type="radio" name="q10" value="b"> The blockchain network sends you a new one</label>
+              <label class="option"><input type="radio" name="q10" value="c"> You lose access to the account and its assets</label>
+              <label class="option"><input type="radio" name="q10" value="d"> Nothing, because the public key works the same way</label>
+            </div>
+          </fieldset>
+
+          <!-- Submit and reset buttons -->
+          <div class="quiz-actions">
+            <button type="submit" id="submit-btn" class="btn btn-primary">Submit Quiz</button>
+          </div>
+        </fieldset>
+
+        <!-- Kept outside the disabled fieldset so it always works after submitting -->
+        <div class="quiz-actions">
+          <button type="button" id="reset-btn" class="btn btn-secondary" hidden>Retake Quiz</button>
+        </div>
+      </form>
+
+    </main>
+
+    <!-- Sidebar: timer and progress, updated by quiz.js -->
+    <aside class="sidebar">
+      <div class="card quiz-status">
+        <h3>Time Remaining</h3>
+        <p id="timer" class="timer" aria-live="off">10:00</p>
+        <p class="status-line">Answered: <strong id="answered-count">0</strong> of 10</p>
+        <progress id="progress-bar" max="10" value="0">0 of 10</progress>
+      </div>
+      <div class="card">
+        <h3>Need a Review?</h3>
+        <ul>
+          <li><a href="topic1.html">Decentralization</a></li>
+          <li><a href="topic2.html">Smart Contracts</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>This site is a class project for
+        <a href="https://ksuweb.github.io/IT3203/">IT 3203 Intro to Web Development</a>
+        at Kennesaw State University.</p>
+      <p>&copy; 2026 Robbie Jones</p>
+    </div>
+  </footer>
+
+</body>
+</html>

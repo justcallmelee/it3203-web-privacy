@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  IT 3203 Class Project - Milestone #1
+  IT 3203 Class Project - Milestones #1 and #2 (updated for Milestone #2: Quiz added to menu)
   Page: Topic 2 - Smart Contracts, Security, and Privacy Risks
 -->
 <html lang="en">
@@ -23,6 +23,7 @@
           <li><a href="topic1.html">Decentralization</a></li>
           <li><a class="current" href="topic2.html">Smart Contracts</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -69,7 +70,7 @@
       </ul>
 
       <table>
-        <caption>Table 2. Well-known Web 3.0 security incidents</caption>
+        <caption>Table 3. Well-known Web 3.0 security incidents</caption>
         <thead>
           <tr>
             <th scope="col">Incident</th>
@@ -131,7 +132,7 @@
       </ul>
 
       <table>
-        <caption>Table 3. Privacy benefits and limitations of Web 3.0</caption>
+        <caption>Table 4. Privacy benefits and limitations of Web 3.0</caption>
         <thead>
           <tr>
             <th scope="col">Potential Benefit</th>
@@ -158,6 +159,23 @@
         </tbody>
       </table>
 
+      <h2 id="design">Privacy by Design: Keeping Personal Data Off-Chain</h2>
+      <p>
+        Because public blockchains are permanent, the safest approach is to avoid writing personal
+        data to them at all. The European Data Protection Board (EDPB) studied this problem in its
+        <em>Guidelines 02/2025 on processing of personal data through blockchain technologies</em>.
+        Its main advice is that developers should first ask whether a blockchain is really needed,
+        and if it is, keep personal data off-chain and store only hashes or proofs on the chain.
+      </p>
+      <p>A privacy-friendly Web 3.0 application usually follows these practices:</p>
+      <ol>
+        <li><strong>Store data off-chain:</strong> keep names, emails, and documents in a database or encrypted storage that can be edited or deleted.</li>
+        <li><strong>Put only proofs on-chain:</strong> record a hash or a zero-knowledge proof that shows the data exists or is valid without exposing it.</li>
+        <li><strong>Encrypt before sharing:</strong> encrypt files before uploading them to public networks such as IPFS.</li>
+        <li><strong>Plan for erasure:</strong> design the system so a user's off-chain data can be removed when they ask, which supports the GDPR "right to erasure."</li>
+        <li><strong>Choose the right network:</strong> the EDPB notes that private, permissioned blockchains give participants more control over who can see personal data than public ones.</li>
+      </ol>
+
       <h2 id="conclusion">Summary</h2>
       <p>
         Smart contracts remove the need to trust a middleman, but they ask users to trust code
@@ -181,6 +199,7 @@
           <li><a href="#security">Security risks</a></li>
           <li><a href="#privacy">Privacy risks</a></li>
           <li><a href="#solutions">Privacy solutions</a></li>
+          <li><a href="#design">Privacy by design</a></li>
           <li><a href="#conclusion">Summary</a></li>
         </ul>
       </div>

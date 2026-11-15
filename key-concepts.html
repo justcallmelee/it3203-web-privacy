@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--
-  IT 3203 Class Project - Milestone #1
-  Page: Key Concepts - seven essential Web 3.0 concepts
+  IT 3203 Class Project - Milestones #1 and #2 (updated for Milestone #2: Quiz added to menu)
+  Page: Key Concepts - ten essential Web 3.0 concepts
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Seven key concepts for understanding Web 3.0 and digital privacy.">
+  <meta name="description" content="Ten key concepts for understanding Web 3.0 and digital privacy.">
   <title>Key Concepts | Web 3.0 &amp; Digital Privacy</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,6 +23,7 @@
           <li><a href="topic1.html">Decentralization</a></li>
           <li><a href="topic2.html">Smart Contracts</a></li>
           <li><a class="current" href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
           <li><a href="references.html">References</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -33,7 +34,7 @@
   <div class="page-banner">
     <div class="banner-inner">
       <h1>Key Concepts</h1>
-      <p class="subtitle">Seven essential ideas for understanding Web 3.0 and privacy</p>
+      <p class="subtitle">Ten essential ideas for understanding Web 3.0 and privacy</p>
     </div>
   </div>
 
@@ -112,8 +113,39 @@
         </p>
       </section>
 
+      <section class="concept" id="zkp">
+        <h2><span class="concept-number">8</span>Zero-Knowledge Proofs</h2>
+        <p>
+          A zero-knowledge proof (ZKP) lets one party prove that a statement is true without
+          revealing the information behind it. For example, a user could prove they are over 18
+          without showing their birth date. The idea was first described by Goldwasser, Micali,
+          and Rackoff in 1989 and is now one of the main tools for adding privacy to blockchains.
+        </p>
+      </section>
+
+      <section class="concept" id="consensus">
+        <h2><span class="concept-number">9</span>Consensus Mechanisms</h2>
+        <p>
+          A consensus mechanism is how thousands of independent computers agree on which
+          transactions are valid. Bitcoin uses <em>proof of work</em>, where miners compete to solve
+          puzzles. Ethereum switched to <em>proof of stake</em> in September 2022 (an upgrade called
+          "The Merge"), where validators lock up cryptocurrency as a security deposit. According to
+          ethereum.org, this cut Ethereum's energy use by about 99.95%.
+        </p>
+      </section>
+
+      <section class="concept" id="keys">
+        <h2><span class="concept-number">10</span>Public and Private Keys</h2>
+        <p>
+          Every Web 3.0 account is a pair of keys. The <em>public key</em> (shown as a wallet
+          address) can be shared so others can send funds or verify signatures. The
+          <em>private key</em> must stay secret because whoever holds it controls the account.
+          There is usually no "forgot password" option, so losing the private key means losing access.
+        </p>
+      </section>
+
       <table>
-        <caption>Table 4. Concept quick reference</caption>
+        <caption>Table 5. Concept quick reference</caption>
         <thead>
           <tr>
             <th scope="col">Concept</th>
@@ -129,12 +161,15 @@
           <tr><td>Smart contracts</td><td>Self-running code on a blockchain</td><td>Public and permanent</td></tr>
           <tr><td>Data ownership</td><td>Control over your information</td><td>Not the same as privacy</td></tr>
           <tr><td>Cryptography</td><td>Math that secures keys and data</td><td>Enables privacy tools</td></tr>
+          <tr><td>Zero-knowledge proofs</td><td>Prove a fact without revealing data</td><td>Strong privacy gain</td></tr>
+          <tr><td>Consensus</td><td>How nodes agree on the ledger</td><td>Keeps records tamper-resistant</td></tr>
+          <tr><td>Public/private keys</td><td>The pair that controls an account</td><td>Lost keys cannot be recovered</td></tr>
         </tbody>
       </table>
 
       <div class="page-nav">
         <a href="topic2.html">&larr; Topic 2: Smart Contracts</a>
-        <a href="references.html">References &rarr;</a>
+        <a href="quiz.html">Test yourself: Quiz &rarr;</a>
       </div>
 
     </main>
@@ -150,6 +185,9 @@
           <li><a href="#smart-contracts">Smart contracts</a></li>
           <li><a href="#privacy">Privacy &amp; ownership</a></li>
           <li><a href="#cryptography">Cryptography</a></li>
+          <li><a href="#zkp">Zero-knowledge proofs</a></li>
+          <li><a href="#consensus">Consensus</a></li>
+          <li><a href="#keys">Public &amp; private keys</a></li>
         </ol>
       </div>
     </aside>
