@@ -1,7 +1,7 @@
 /* ==========================================================
    IT 3203 Project - Milestone #2
    quiz.js: logic for the Web 3.0 & Digital Privacy quiz
-   - Starts a 10-minute countdown when the user clicks Start
+   - Starts a 15-minute countdown when the user clicks Start
    - Tracks how many questions have been answered
    - Grades the answers on submit (or when time runs out)
    - Shows pass/fail, total score, per-question results and time spent
@@ -11,7 +11,7 @@
 "use strict";
 
 /* ---------- Quiz settings ---------- */
-const TIME_LIMIT_SECONDS = 10 * 60; // 10-minute limit
+const TIME_LIMIT_SECONDS = 15 * 60; // 15-minute limit
 const POINTS_PER_QUESTION = 10;
 const PASSING_SCORE = 70;           // out of 100
 
@@ -230,7 +230,7 @@ function gradeQuiz(timedOut) {
   submitted = true;
   stopTimer();
 
-  // Time spent, capped at the 10-minute limit
+  // Time spent, capped at the 15-minute limit
   const secondsSpent = Math.min(
     Math.round((Date.now() - startTime) / 1000),
     TIME_LIMIT_SECONDS
@@ -368,7 +368,7 @@ function resetQuiz() {
   resetButton.hidden = true;
   updateProgress();
 
-  // Restart right away with a fresh 10 minutes
+  // Restart right away with a fresh 15 minutes
   startQuiz();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
