@@ -175,8 +175,15 @@ function updateProgress() {
     }
   });
   answeredCount.textContent = count;
-  progressBar.value = count;
-  progressBar.textContent = count + " of 10";
+
+  // Fill the custom progress bar and tell screen readers the new value
+  progressBar.querySelector(".progress-fill").style.width = (count / ANSWER_KEY.length) * 100 + "%";
+  progressBar.setAttribute("aria-valuenow", count);
+
+  // Highlight the radio and checkbox rows the user has picked
+  form.querySelectorAll(".option input").forEach((input) => {
+    input.closest(".option").classList.toggle("selected", input.checked);
+  });
 }
 
 /* ==========================================================
@@ -279,13 +286,22 @@ function gradeQuiz(timedOut) {
 function showResults(totalScore, correctCount, secondsSpent, rows, timedOut) {
   const passed = totalScore >= PASSING_SCORE;
 
-  // Summary: pass/fail banner and score cards
+  // Color and fill amount for the circular score ring (a CSS conic gradient)
+  const ringColor = passed ? "#3ccf8e" : "#ff6b6b";
+  const ringStyle = `background: conic-gradient(${ringColor} ${totalScore}%, #2c2856 ${totalScore}% 100%);`;
+
+  // Summary: pass/fail banner with score ring, then score cards
   let html = `
     <div class="result-banner ${passed ? "pass" : "fail"}">
-      <h2>${passed ? "You Passed!" : "Not Passed"}</h2>
-      <p>${passed
-        ? "Great work. You understand the key ideas of Web 3.0 and privacy."
-        : "You need " + PASSING_SCORE + " points to pass. Review the topic pages and try again."}</p>
+      <div class="score-ring" style="${ringStyle}">
+        <span>${totalScore}%</span>
+      </div>
+      <div class="result-text">
+        <h2>${passed ? "You Passed!" : "Not Passed"}</h2>
+        <p>${passed
+          ? "Great work. You understand the key ideas of Web 3.0 and privacy."
+          : "You need " + PASSING_SCORE + " points to pass. Review the topic pages and try again."}</p>
+      </div>
     </div>
     ${timedOut ? '<p class="time-up">Time ran out, so your quiz was submitted automatically.</p>' : ""}
     <div class="score-grid">

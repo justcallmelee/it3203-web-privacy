@@ -21,7 +21,7 @@
   <!-- Site header and main menu -->
   <header id="site-header">
     <div class="header-inner">
-      <a class="site-name" href="index.html">Web 3.0 &amp; Digital Privacy</a>
+      <a class="site-name" href="index.html"><span class="logo-mark" aria-hidden="true">W3</span>Web 3.0 &amp; Digital Privacy</a>
       <nav aria-label="Main menu">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -49,13 +49,18 @@
       <!-- Instructions shown before the quiz starts -->
       <section id="quiz-intro" class="quiz-intro">
         <h2>Before You Begin</h2>
-        <ul>
-          <li>There are <strong>10 questions</strong>, worth <strong>10 points</strong> each.</li>
-          <li>You have <strong>15 minutes</strong>. The quiz submits automatically when time runs out.</li>
-          <li>Questions marked <em>"select all that apply"</em> are only correct if every right choice is checked.</li>
-          <li>You need <strong>70 points or more</strong> to pass.</li>
+        <!-- Quick facts about the quiz, shown as a row of stat chips -->
+        <ul class="quiz-facts">
+          <li><strong>10</strong> questions</li>
+          <li><strong>15</strong> minutes</li>
+          <li><strong>70</strong> points to pass</li>
         </ul>
-        <button type="button" id="start-btn" class="btn btn-primary">Start Quiz</button>
+        <ul class="quiz-rules">
+          <li>Each question is worth <strong>10 points</strong>.</li>
+          <li>The quiz submits automatically when the timer reaches 0:00.</li>
+          <li>Questions marked <em>"select all that apply"</em> are only correct if every right choice is checked.</li>
+        </ul>
+        <button type="button" id="start-btn" class="btn btn-primary btn-large">Start Quiz</button>
       </section>
 
       <!-- Results panel: filled in by quiz.js after the quiz is submitted -->
@@ -68,7 +73,7 @@
 
           <!-- Question 1: fill in the blank -->
           <fieldset class="question" id="q1">
-            <legend><span class="q-number">1</span>Fill in the blank</legend>
+            <legend><span class="q-type">Fill in the blank</span><span class="q-number">1</span>Complete the sentence</legend>
             <label for="q1-input">
               A <span class="blank">________</span> is a shared, append-only record of transactions
               kept by many computers instead of one.
@@ -78,7 +83,7 @@
 
           <!-- Question 2: fill in the blank -->
           <fieldset class="question" id="q2">
-            <legend><span class="q-number">2</span>Fill in the blank</legend>
+            <legend><span class="q-type">Fill in the blank</span><span class="q-number">2</span>Complete the sentence</legend>
             <label for="q2-input">
               IPFS finds a file by a Content Identifier, which is abbreviated as
               <span class="blank">________</span>.
@@ -88,7 +93,7 @@
 
           <!-- Question 3: fill in the blank -->
           <fieldset class="question" id="q3">
-            <legend><span class="q-number">3</span>Fill in the blank</legend>
+            <legend><span class="q-type">Fill in the blank</span><span class="q-number">3</span>Complete the sentence</legend>
             <label for="q3-input">
               In September 2022, Ethereum switched from proof of work to proof of
               <span class="blank">________</span>.
@@ -98,7 +103,7 @@
 
           <!-- Question 4: multiple choice (one answer) -->
           <fieldset class="question" id="q4">
-            <legend><span class="q-number">4</span>Which word best describes a wallet address on a public blockchain?</legend>
+            <legend><span class="q-type">Multiple choice</span><span class="q-number">4</span>Which word best describes a wallet address on a public blockchain?</legend>
             <div class="options">
               <label class="option"><input type="radio" name="q4" value="anonymous"> Anonymous: it can never be linked to a person</label>
               <label class="option"><input type="radio" name="q4" value="pseudonymous"> Pseudonymous: not your name, but it can be traced</label>
@@ -109,7 +114,7 @@
 
           <!-- Question 5: multiple choice (one answer) -->
           <fieldset class="question" id="q5">
-            <legend><span class="q-number">5</span>What does a zero-knowledge proof allow a user to do?</legend>
+            <legend><span class="q-type">Multiple choice</span><span class="q-number">5</span>What does a zero-knowledge proof allow a user to do?</legend>
             <div class="options">
               <label class="option"><input type="radio" name="q5" value="a"> Delete data that was written to a blockchain</label>
               <label class="option"><input type="radio" name="q5" value="b"> Prove a statement is true without revealing the data behind it</label>
@@ -120,7 +125,7 @@
 
           <!-- Question 6: multiple choice (one answer) -->
           <fieldset class="question" id="q6">
-            <legend><span class="q-number">6</span>What type of bug was exploited in The DAO incident of 2016?</legend>
+            <legend><span class="q-type">Multiple choice</span><span class="q-number">6</span>What type of bug was exploited in The DAO incident of 2016?</legend>
             <div class="options">
               <label class="option"><input type="radio" name="q6" value="phishing"> Phishing</label>
               <label class="option"><input type="radio" name="q6" value="reentrancy"> Reentrancy</label>
@@ -131,7 +136,7 @@
 
           <!-- Question 7: multiple choice (one answer) using a drop-down list -->
           <fieldset class="question" id="q7">
-            <legend><span class="q-number">7</span>Choose the best answer from the list</legend>
+            <legend><span class="q-type">Drop-down</span><span class="q-number">7</span>Choose the best answer from the list</legend>
             <label for="q7-select">Why is it hard to fix a bug in a smart contract after it is deployed?</label>
             <select id="q7-select" name="q7">
               <option value="">-- Select an answer --</option>
@@ -144,7 +149,7 @@
 
           <!-- Question 8: multi-selection (more than one answer) -->
           <fieldset class="question" id="q8">
-            <legend><span class="q-number">8</span>Which of these are privacy risks of public blockchains? <em>(Select all that apply.)</em></legend>
+            <legend><span class="q-type">Select all that apply</span><span class="q-number">8</span>Which of these are privacy risks of public blockchains?</legend>
             <div class="options">
               <label class="option"><input type="checkbox" name="q8" value="visible"> Transactions can be viewed by anyone</label>
               <label class="option"><input type="checkbox" name="q8" value="permanent"> Data written to the chain cannot be deleted</label>
@@ -156,7 +161,7 @@
 
           <!-- Question 9: multi-selection (more than one answer) -->
           <fieldset class="question" id="q9">
-            <legend><span class="q-number">9</span>Which practices help protect personal data in a Web 3.0 app? <em>(Select all that apply.)</em></legend>
+            <legend><span class="q-type">Select all that apply</span><span class="q-number">9</span>Which practices help protect personal data in a Web 3.0 app?</legend>
             <div class="options">
               <label class="option"><input type="checkbox" name="q9" value="offchain"> Keep personal data off-chain</label>
               <label class="option"><input type="checkbox" name="q9" value="names"> Store users' full names on a public blockchain</label>
@@ -168,7 +173,7 @@
 
           <!-- Question 10: multiple choice (one answer) -->
           <fieldset class="question" id="q10">
-            <legend><span class="q-number">10</span>What usually happens if you lose the private key to your Web 3.0 wallet?</legend>
+            <legend><span class="q-type">Multiple choice</span><span class="q-number">10</span>What usually happens if you lose the private key to your Web 3.0 wallet?</legend>
             <div class="options">
               <label class="option"><input type="radio" name="q10" value="a"> You reset it with a "forgot password" email</label>
               <label class="option"><input type="radio" name="q10" value="b"> The blockchain network sends you a new one</label>
@@ -194,10 +199,13 @@
     <!-- Sidebar: timer and progress, updated by quiz.js -->
     <aside class="sidebar">
       <div class="card quiz-status">
-        <h3>Time Remaining</h3>
+        <h3 class="timer-label">Time Remaining</h3>
         <p id="timer" class="timer" aria-live="off">15:00</p>
         <p class="status-line">Answered: <strong id="answered-count">0</strong> of 10</p>
-        <progress id="progress-bar" max="10" value="0">0 of 10</progress>
+        <!-- Custom progress bar: quiz.js sets the fill width and aria-valuenow -->
+        <div id="progress-bar" class="progress-track" role="progressbar" aria-label="Questions answered" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+          <div class="progress-fill"></div>
+        </div>
       </div>
       <div class="card">
         <h3>Need a Review?</h3>
